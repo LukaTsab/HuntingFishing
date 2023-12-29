@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration Page</title>
+    <style>
+        /* start of menubar */
+
+      
+        body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+}
+
+.navbar {
+    background-color: #333;
+    overflow: hidden;
+    text-align: center;
+    /* Center the text within the navbar */
+    width: 100%; /* Set the navbar to full width */
+    margin: 0; /* Remove default margin */
+    position: fixed; /* Fixed position to stick to the top */
+    top: 0; /* Stick to the top */
+}
+
+.navbar a {
+    display: inline-block;
+    /* Display links in a line */
+    color: white;
+    text-align: center;
+    /* Center the text within each link */
+    padding: 34px 36px;
+    text-decoration: none;
+    font-size: large;
+}
+
+.navbar a:hover {
+    background-color: #ddd;
+    color: black;
+}
+
+#content {
+    padding: 20px;
+    text-align: center;
+    /* Center the text within the content area */
+}
+
+      
+/* end of menubar */
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column; /* Align children in a column */
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        #AuthoDiv {
+            display: flex;
+            flex-direction: column; /* Align children in a column */
+            align-items: center; /* Center children horizontally */
+            justify-content: center; /* Center children vertically */
+            height: 700px;
+            width: 600px;
+            background-color: rgba(17, 17, 17, 0.635);
+            border-radius: 20px;
+        }
+
+        #SideLeft, #SideRight {
+            width: 100%; /* Full width for both sides */
+            padding: 20px; /* Added padding for better spacing */
+            margin-left: 60px;
+        }
+
+        .error {
+            margin-bottom: 10px; /* Add a margin to the error message */
+            color: red;
+        }
+
+        .labels {
+            margin-bottom: 5px;
+            display: block; /* Make labels block-level elements */
+        }
+
+        .inputs {
+            margin-bottom: 10px; /* Keep a consistent margin for all input fields */
+            padding: 8px;
+            width: 90%; /* Make input fields full-width */
+            box-sizing: border-box; /* Include padding and border in the width */
+        }
+
+        #btn1 {
+            padding: 10px;
+            cursor: pointer;
+            margin-top: 20px;
+            border-radius: 20px;
+            height: 60px;
+            width: 100px;
+            background-color: bisque;
+        }
+  
+    </style>
+</head>
+<body>
+    <div class="navbar">
+        <a href="Main.html">Main</a>
+         <a href="AboutUs.html" >Info</a>
+         <a href="contact.html" >Contact</a>
+         <a href="SingIn.html" >Sign In</a>
+         <a href="SignUp.html" >Sign up</a>
+     </div>
+     
+    <H1>authorization</H1>
+    <div id="google_translate_element"></div>
+    <div id="AuthoDiv">
+        <div id="SideLeft">
+            <form id="registrationForm" onsubmit="return validateForm()">
+                <label class="labels">Email:</label>
+                <input class="inputs" type="text" id="email" name="email" required>
+                <br>
+                
+                <label class="labels">Password:</label>
+                <input  class="inputs" type="password" id="password" name="password" required>
+                <span id="passwordStrengthMessage" class="error"></span>
+                <br>
+                
+                <label class="labels">Confirm Password:</label>
+                <input class="inputs" type="password" id="confirmPassword" name="confirmPassword" required>
+                <br>
+        
+                <label class="labels">Registration Date:</label>
+                <input class="inputs" type="text" id="registrationDate" name="registrationDate" placeholder="YYYY-MM-DD" required>
+            
+        </div>
+        <div id="SideRight">
+            <label class="labels">Username:</label>
+            <input class="inputs" type="text" id="username" name="username" required>
+            <br>
+    
+            <label class="labels">City:</label>
+            <input class="inputs" type="text" id="city" name="city" required>
+            <br>
+    
+            <label class="labels">Country:</label>
+            <input class="inputs" type="text" id="country" name="country" required>
+            <br>
+    
+            <label class="labels">Phone Number:</label>
+            <input class="inputs" type="text" id="phoneNumber" name="phoneNumber" required>
+        </div>
+        <button id="btn1" type="submit">Register</button>
+    </form>
+    </div>
+    <script type="text/javascript">
+        function googleTranslateElementInit() {
+            new google.translate.TranslateElement({ pageLanguage: 'en' }, 'google_translate_element');
+        }
+    </script>
+    
+    <script type="text/javascript" src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+    <script>
+        document.getElementById('password').addEventListener('input', function () {
+            const password = this.value;
+            const passwordStrengthMessage = document.getElementById('passwordStrengthMessage');
+            passwordStrengthMessage.innerHTML = getPasswordStrengthMessage(password);
+        });
+
+        document.getElementById('registrationDate').addEventListener('focus', function () {
+            // Automatically populate the current date when the field is focused
+            const currentDate = new Date().toISOString().split('T')[0];
+            this.value = currentDate;
+        });
+
+        function validateForm() {
+            // Validate email
+            const email = document.getElementById('email').value;
+            if (!validateEmail(email)) {
+                alert('Invalid email format');
+                return false;
+            }
+
+            // Validate password and confirm password match
+            const password = document.getElementById('password').value;
+            const confirmPassword = document.getElementById('confirmPassword').value;
+            if (password !== confirmPassword) {
+                alert('Passwords do not match');
+                return false;
+            }
+
+            // Other validations can be added
+
+            return true;
+        }
+
+        function validateEmail(email) {
+            // Simple email validation using @ symbol
+            return email.includes('@');
+        }
+
+        function getPasswordStrengthMessage(password) {
+            // Password strength logic
+            if (/^[a-zA-Z]+$/.test(password)) {
+                return '<br> Weak: Password contains only English alphabet characters.';
+            } else if (/^[a-zA-Z0-9]+$/.test(password)) {
+                return '<br>Average: Password contains English  alphabet characters and numbers.';
+            } else if (/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[^\W_]+$/.test(password)) {
+                return '<br>Strong: Password contains uppercase and  lowercase characters as well as numbers.';
+            } else {
+                return '<br>Invalid password format.';
+            }
+        }
+        
+    </script>
+</body>
+</html>

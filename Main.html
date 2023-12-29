@@ -1,0 +1,637 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <title>Document</title>
+    <style>
+        /* manuBar */
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+}
+
+.navbar {
+    background-color: #333;
+    overflow: hidden;
+    text-align: center;  /* Center the text within the navbar */
+}
+
+.navbar a {
+    display: inline-block; /* Display links in a line */
+    color: white;
+    text-align: center;  /* Center the text within each link */
+    padding: 34px 36px;
+    text-decoration: none;
+    font-size: large;
+}
+
+.navbar a:hover {
+    background-color: #ddd;
+    color: black;
+}
+
+#content {
+    padding: 20px;
+    text-align: center;  /* Center the text within the content area */
+}
+
+
+/* karuseli */
+
+body {
+    font-family: Arial;
+    margin: 0;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+img {
+    vertical-align: middle;
+}
+
+/* Position the image container (needed to position the left and right arrows) */
+.container {
+    max-width: 1200px; /* Set a maximum width for the container */
+    margin: auto; /* Center the container on the page */
+    position: relative;
+    height: 300px; /* Set the height of the container */
+}
+
+/* Hide the images by default */
+.mySlides {
+    display: none;
+}
+
+/* Add a pointer when hovering over the thumbnail images */
+.cursor {
+    cursor: pointer;
+}
+
+/* Next & previous buttons */
+.prev,
+.next {
+    cursor: pointer;
+    position: absolute;
+    top: 40%;
+    width: auto;
+    padding: 16px;
+    margin-top: -50px;
+    color: white;
+    font-weight: bold;
+    font-size: 20px;
+    border-radius: 0 3px 3px 0;
+    user-select: none;
+    -webkit-user-select: none;
+}
+
+/* Position the "next button" to the right */
+.next {
+    right: 0;
+    border-radius: 3px 0 0 3px;
+}
+
+/* On hover, add a black background color with a little bit see-through */
+.prev:hover,
+.next:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+/* Number text (1/3 etc) */
+.numbertext {
+    color: #f2f2f2;
+    font-size: 12px;
+    padding: 8px 12px;
+    position: absolute;
+    top: 0;
+}
+
+/* Container for image text */
+.caption-container {
+    text-align: center;
+    background-color: #222;
+    padding: 2px 16px;
+    color: white;
+}
+
+.row {
+    max-width: 1200px; /* Set a maximum width for the row */
+    margin: auto; /* Center the row on the page */
+}
+
+/* Six columns side by side */
+.column {
+    float: left;
+    width: 16.66%;
+}
+
+/* Add a transparency effect for thumbnail images */
+.demo {
+    opacity: 0.6;
+}
+
+.active,
+.demo:hover {
+    opacity: 1;
+}
+
+
+
+
+/* cardebi */
+
+.column1 {
+    margin-top: 70PX;
+    float: left;
+    width: 33.33%;
+    padding: 10px;
+    height: 300px; 
+  }
+  
+  /* Clear floats after the columns */
+  .row1:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+
+
+  /* card carusel */
+  *,
+  ::before,
+  ::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  /* body {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background: #222;
+  } */
+  
+  #cCarousel {
+    position: relative;
+    max-width: 900px;
+    margin: auto;
+  }
+  
+  #cCarousel .arrow {
+    position: absolute;
+    top: 50%;
+    display: flex;
+    width: 45px;
+    height: 45px;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    z-index: 1;
+    font-size: 26px;
+    color: rgb(185, 185, 185);
+    background: #00000072;
+    cursor: pointer;
+  }
+  
+  #cCarousel #prev {
+    left: 0px;
+  }
+  
+  #cCarousel #next {
+    right: 0px;
+  }
+  
+  #carousel-vp {
+    width: 770px;
+    height: 400px;
+    display: flex;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+    margin: auto;
+  }
+  
+  @media (max-width: 770px) {
+    #carousel-vp {
+      width: 510px;
+    }
+  }
+  
+  @media (max-width: 510px) {
+    #carousel-vp {
+      width: 250px;
+    }
+  }
+  
+  #cCarousel #cCarousel-inner {
+    display: flex;
+    position: absolute;
+    transition: 0.3s ease-in-out;
+    gap: 10px;
+    left: 0px;
+  }
+  
+  .cCarousel-item {
+    width: 250px;
+    height: 365px;
+    border: 2px solid rgb(0, 0, 0);
+    border-radius: 15px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .cCarousel-item img {
+    width: 100%;
+    object-fit: cover;
+    min-height: 246px;
+    color: white;
+  }
+  
+  .cCarousel-item .infos {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    background: white;
+    color: black;
+  }
+  
+  .cCarousel-item .infos button {
+    background: #222;
+    padding: 10px 30px;
+    border-radius: 15px;
+    color: white;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+  }
+
+
+
+  /* footer */
+
+  .contentFooter {
+    flex: 1;
+    /* Add your content styles here */
+    padding: 20px;
+  }
+
+  .footer {
+    background-color: #333;
+    color: white;
+    padding: 20px;
+    text-align: center;
+  }
+    </style>
+</head>
+<body>
+    <!-- manuBar -->
+    <div class="navbar">
+        <a href="Main.html">Main</a>
+         <a href="AboutUs.html" >Info</a>
+         <a href="contact.html" >Contact</a>
+         <a href="SingIn.html" >Sign In</a>
+         <a href="SignUp.html" >Sign up</a>
+     </div>
+    
+
+
+     <!-- sidebar -->
+     <div class="w3-sidebar w3-bar-block w3-border-right" style="display:none" id="mySidebar">
+        <button onclick="w3_close()" class="w3-bar-item w3-large">Close &times;</button>
+        <a href="Rating.html" class="w3-bar-item w3-button">Rating</a>
+        <a href="Cart.html" class="w3-bar-item w3-button">Cart</a>
+        
+      </div>
+      
+      <!-- Page Content -->
+      <div class="w3-teal">
+        <button class="w3-button w3-teal w3-xlarge" onclick="w3_open()">☰</button>
+        <div class="w3-container">
+          
+        </div>
+      </div>
+    
+      <!-- end of the side bar -->
+      <div id="google_translate_element"></div>
+      
+     <div id="content"></div> 
+         <!-- Content will be loaded dynamically here -->
+     
+     <!-- start of main page -->
+     <!-- karuseli -->
+     <div class="container">
+       <div class="mySlides">
+         <div class="numbertext">1 / 6</div>
+         <img src="https://wallpapercave.com/wp/wp6107479.jpg" style="width:100%">
+       </div>
+     
+       <div class="mySlides">
+         <div class="numbertext">2 / 6</div>
+         <img src="https://www.wallpaperflare.com/static/944/890/364/military-m4-carbine-gun-soldier-wallpaper.jpg" style="width:100%">
+       </div>
+     
+       <div class="mySlides">
+         <div class="numbertext">3 / 6</div>
+         <img src="https://www.teahub.io/photos/full/175-1750252_us-marines.jpg" style="width:100%">
+       </div>
+         
+       <div class="mySlides">
+           <div class="numbertext">4 / 6</div>
+           <img src="https://e0.pxfuel.com/wallpapers/48/946/desktop-wallpaper-deer-hunting-whitetail-deer-hunting.jpg" style="width:100%">
+         </div>
+     
+       <div class="mySlides">
+         <div class="numbertext">5 / 6</div>
+         <img src="https://www.huntshowdown.com//files/screenshots/Hunt-Wallpaper-7-1920x1080.jpg" style="width:100%">
+       </div>
+         
+       <div class="mySlides">
+         <div class="numbertext">6 / 6</div>
+         <img src="https://wallpapercave.com/wp/wp2714773.jpg" style="width:100%">
+       </div>
+         
+       <a class="prev" onclick="plusSlides(-1)">❮</a>
+       <a class="next" onclick="plusSlides(1)">❯</a>
+     
+       <div class="caption-container">
+         <p id="caption"></p>
+       </div>
+     
+       <div class="row">
+         <div class="column">
+           <img class="demo cursor" src="https://wallpapercave.com/wp/wp6107479.jpg" style="width:100%" onclick="currentSlide(1)" alt="The Woods">
+         </div>
+         <div class="column">
+           <img class="demo cursor" src="https://www.wallpaperflare.com/static/944/890/364/military-m4-carbine-gun-soldier-wallpaper.jpg" style="width:100%" onclick="currentSlide(2)" alt="Cinque Terre">
+         </div>
+         <div class="column">
+           <img class="demo cursor" src="https://www.teahub.io/photos/full/175-1750252_us-marines.jpg" style="width:100%" onclick="currentSlide(3)" alt="Mountains and fjords">
+         </div>
+         <div class="column">
+           <img class="demo cursor" src="https://e0.pxfuel.com/wallpapers/48/946/desktop-wallpaper-deer-hunting-whitetail-deer-hunting.jpg" style="width:100%" onclick="currentSlide(4)" alt="Northern Lights">
+         </div>
+         <div class="column">
+           <img class="demo cursor" src="https://www.huntshowdown.com//files/screenshots/Hunt-Wallpaper-7-1920x1080.jpg" style="width:100%" onclick="currentSlide(5)" alt="Nature and sunrise">
+         </div>    
+         <div class="column">
+           <img class="demo cursor" src="https://wallpapercave.com/wp/wp2714773.jpg" style="width:100%" onclick="currentSlide(6)" alt="Snowy Mountains">
+         </div>
+       </div>
+     </div>
+   
+ 
+     <!-- cardebi -->
+ 
+ 
+     <div class="row1">
+       <div class="column1" style="background-color:#aaa;">
+         <h2>why us?</h2>
+         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos odio nost <br>
+          recusandae doloremque hic illum necessitatibus ratione in, totam aperiam,<br>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos odio nost <br>
+          recusandae doloremque hic illum necessitatibus ratione in, totam aperiam,<br>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos odio nost <br>
+           distinctio voluptatum quod commodi, deleniti dolorum reprehenderit inventore! </p>
+       </div>
+       <div class="column1" style="background-color:#bbb;">
+         <h2>We have best prices</h2>
+         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos odio nost <br>
+            recusandae doloremque hic illum necessitatibus ratione in, totam aperiam,<br>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos odio nost <br>
+          recusandae doloremque hic illum necessitatibus ratione in, totam aperiam,<br>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos odio nost <br>
+            distinctio voluptatum quod commodi, deleniti dolorum reprehenderit inventore! </p>
+       </div>
+       <div class="column1" style="background-color:#ccc;">
+         <h2>Best Guns we sell</h2>
+         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos odio nost <br>
+          recusandae doloremque hic illum necessitatibus ratione in, totam aperiam,<br>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos odio nost <br>
+          recusandae doloremque hic illum necessitatibus ratione in, totam aperiam,<br>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos odio nost <br>
+          distinctio voluptatum quod commodi, deleniti dolorum reprehenderit inventore! </p>
+       </div>
+     </div>
+  <!-- card carusel -->
+ 
+       <section>
+         <div id="cCarousel">
+           <div class="arrow" id="prev"><i class="fa-solid fa-chevron-left"></i></div>
+           <div class="arrow" id="next"><i class="fa-solid fa-chevron-right"></i></div>
+       
+           <div id="carousel-vp">
+             <div id="cCarousel-inner">
+       
+               <article class="cCarousel-item">
+                 <img src="https://upload.wikimedia.org/wikipedia/commons/4/4f/SIG_Pro_by_Augustas_Didzgalvis.jpg" alt="Moon">
+                 <div class="infos">
+                   <h3>25$ price 1 / 10</h3>
+                   <button type="button">See</button>
+                 </div>
+               </article>
+       
+               <article class="cCarousel-item">
+                 <img src="https://www.middleeasteye.net/sites/default/files/styles/max_2600x2600/public/images-story/Turkey-canik-M2-machine-gun.jpeg?itok=zidQMsXh" alt="Moon">
+                 <div class="infos">
+                   <h3>25$ price 2 / 10</h3>
+                   <button type="button">See</button>
+                 </div>
+               </article>
+       
+               <article class="cCarousel-item">
+                 <img src="https://m.media-amazon.com/images/W/MEDIAX_792452-T2/images/I/612EDMHM+IL._AC_UF894,1000_QL80_.jpg" alt="Moon">
+                 <div class="infos">
+                   <h3>25$ price 3 / 10</h3>
+                   <button type="button">See</button>
+                 </div>
+               </article>
+       
+               <article class="cCarousel-item">
+                 <img src="https://cdn.britannica.com/45/190745-050-1F7EC780/Gun-Constitution.jpg" alt="Moon">
+                 <div class="infos">
+                   <h3>25$ price 4 / 10</h3>
+                   <button type="button">See</button>
+                 </div>
+               </article>
+       
+               <article class="cCarousel-item">
+                 <img src="https://st.depositphotos.com/5550632/60940/i/450/depositphotos_609407596-stock-photo-rod-reel-table.jpg" alt="Moon">
+                 <div class="infos">
+                   <h3>25$ price 5 / 10</h3>
+                   <button type="button">See</button>
+                 </div>
+               </article>
+       
+               <article class="cCarousel-item">
+                 <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQlal21PTit-Obi8hruJV0d5ScntKTrjaSawNxhmMZkZsfMQbo4mYlFaBjJjSHlkufFiRo&usqp=CAU" alt="Moon">
+                 <div class="infos">
+                   <h3>25$ price 6 / 10</h3>
+                   <button type="button">See</button>
+                 </div>
+               </article>
+ 
+               <article class="cCarousel-item">
+                 <img src="data:image/jpeg;base64,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" alt="Moon">
+                 <div class="infos">
+                   <h3>25$ price 7 / 10</h3>
+                   <button type="button">See</button>
+                 </div>
+               </article>
+ 
+               <article class="cCarousel-item">
+                 <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSk2cJUlepgXSUA3FpdYvCoCEynmz4TfrPoMQ&usqp=CAU" alt="Moon">
+                 <div class="infos">
+                   <h3>25$ price 8 / 10</h3>
+                   <button type="button">See</button>
+                 </div>
+               </article>
+ 
+               <article class="cCarousel-item">
+                 <img src="https://www.tripsavvy.com/thmb/ZIwaHIPT9ZjJ7Q7iwvPcDNwEvOY=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/TRIPSAVVY-7-best-fishing-rod-and-reel-combos-4161155-final-01-87e0f75129644dbfbb59d1fc71935c27.jpg" alt="Moon">
+                 <div class="infos">
+                   <h3>25$ price 9 / 10</h3>
+                   <button type="button">See</button>
+                 </div>
+               </article>
+ 
+               <article class="cCarousel-item">
+                 <img src="https://whyy.org/wp-content/uploads/2017/07/shutterstock_gun.jpg" alt="Moon">
+                 <div class="infos">
+                   <h3>25$ price 10 / 10</h3>
+                   <button type="button">See</button>
+                 </div>
+               </article>
+             </div>
+           </div>
+         </div>
+       </section>
+ <!-- end of the main page -->
+ <div class="footer">
+    <p>&copy; 2023 Your Website Name. All Rights Reserved. Lorem<br>
+      ipsum dolor sit amet consectetur adipisicing elit. Nulla atque <br>
+      quod perspiciatis soluta iure, magnam nobis sequi modi incidunt, quam ab <br>
+      quis placeat qui odit obcaecati explicabo doloribus? Ea, ad?</p>
+  </div>
+  
+  <script type="text/javascript">
+    function googleTranslateElementInit() {
+        new google.translate.TranslateElement({ pageLanguage: 'en' }, 'google_translate_element');
+    }
+</script>
+
+<script type="text/javascript" src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+    <script>
+function w3_open() {
+  document.getElementById("mySidebar").style.display = "block";
+}
+
+function w3_close() {
+  document.getElementById("mySidebar").style.display = "none";
+}
+
+        let slideIndex = 1;
+showSlides(slideIndex);
+
+function plusSlides(n) {
+  showSlides(slideIndex += n);
+}
+
+function currentSlide(n) {
+  showSlides(slideIndex = n);
+}
+
+function showSlides(n) {
+  let i;
+  let slides = document.getElementsByClassName("mySlides");
+  let dots = document.getElementsByClassName("demo");
+  let captionText = document.getElementById("caption");
+  if (n > slides.length) {slideIndex = 1}
+  if (n < 1) {slideIndex = slides.length}
+  for (i = 0; i < slides.length; i++) {
+    slides[i].style.display = "none";
+  }
+  for (i = 0; i < dots.length; i++) {
+    dots[i].className = dots[i].className.replace(" active", "");
+  }
+  slides[slideIndex-1].style.display = "block";
+  dots[slideIndex-1].className += " active";
+  captionText.innerHTML = dots[slideIndex-1].alt;
+}
+
+
+// card karuseli
+const prev = document.querySelector("#prev");
+const next = document.querySelector("#next");
+
+let carouselVp = document.querySelector("#carousel-vp");
+
+let cCarouselInner = document.querySelector("#cCarousel-inner");
+let carouselInnerWidth = cCarouselInner.getBoundingClientRect().width;
+
+let leftValue = 0;
+
+// Variable used to set the carousel movement value (card's width + gap)
+const totalMovementSize =
+  parseFloat(
+    document.querySelector(".cCarousel-item").getBoundingClientRect().width,
+    10
+  ) +
+  parseFloat(
+    window.getComputedStyle(cCarouselInner).getPropertyValue("gap"),
+    10
+  );
+
+prev.addEventListener("click", () => {
+  if (!leftValue == 0) {
+    leftValue -= -totalMovementSize;
+    cCarouselInner.style.left = leftValue + "px";
+  }
+});
+
+next.addEventListener("click", () => {
+  const carouselVpWidth = carouselVp.getBoundingClientRect().width;
+  if (carouselInnerWidth - Math.abs(leftValue) > carouselVpWidth) {
+    leftValue -= totalMovementSize;
+    cCarouselInner.style.left = leftValue + "px";
+  }
+});
+
+const mediaQuery510 = window.matchMedia("(max-width: 510px)");
+const mediaQuery770 = window.matchMedia("(max-width: 770px)");
+
+mediaQuery510.addEventListener("change", mediaManagement);
+mediaQuery770.addEventListener("change", mediaManagement);
+
+let oldViewportWidth = window.innerWidth;
+
+function mediaManagement() {
+  const newViewportWidth = window.innerWidth;
+
+  if (leftValue <= -totalMovementSize && oldViewportWidth < newViewportWidth) {
+    leftValue += totalMovementSize;
+    cCarouselInner.style.left = leftValue + "px";
+    oldViewportWidth = newViewportWidth;
+  } else if (
+    leftValue <= -totalMovementSize &&
+    oldViewportWidth > newViewportWidth
+  ) {
+    leftValue -= totalMovementSize;
+    cCarouselInner.style.left = leftValue + "px";
+    oldViewportWidth = newViewportWidth;
+  }
+}
+
+// end of a main page
+    </script>
+</body>
+</html>
